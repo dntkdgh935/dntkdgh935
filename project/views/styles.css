@@ -1,0 +1,423 @@
+*{
+    margin : 0;
+    padding : 0;
+    box-sizing : border-box;
+}
+
+a, a:link, a:visited {
+    color : inherit;
+    text-decoration : none;
+}
+
+li{
+    list-style : none;
+}
+
+
+
+/*header*/
+header {
+    position : fixed;
+    color: white;
+    top : 0;
+    z-index : 1;
+    width : 100%;
+    padding : 1rem;
+    background-color: aquamarine;
+}
+
+header .container {
+    display : flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+header nav ul {
+    display : flex;
+}
+
+header nav ul li{
+    padding: 10px;
+    margin-left: 10px;
+}
+
+header button{
+    background:transparent;
+    border:0;
+    cursor: pointer;
+}
+
+header h1 button{
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+header nav ul li button{
+    font-size:1.2rem;
+    color: black;
+}
+
+
+
+/*main*/
+
+main h4 {
+    font-size: 2rem;
+    padding: 1rem 2rem;
+    margin-top: 7rem;
+    text-align: center;
+}
+
+main .search-container form{
+    background-color: transparent;
+    border: 2px solid gray;
+    padding :1rem 2rem;
+    margin-top: 2rem;
+    color : gray;
+    font-weight: bold;
+    text-align: center;
+}
+
+main .hot-review h2{
+    font-size: 2rem;
+    padding: 1rem 2rem;
+    margin-top: 7rem;
+    text-align: center;
+}
+
+main .hot-review::after{
+    content : "";
+    display : block;
+    clear: both;
+}
+
+main .hot-review #review-card .card {
+    width : 20%;
+    height : 300px;
+    float : left;
+    margin: 100px 10px; 
+}
+
+main .hot-review .card img{
+    width : 100%;
+    height : 50%;
+    display : block;
+}
+
+
+/*footer*/
+
+footer {
+    text-align: center;
+    background-color: aquamarine;
+        position: relative; 
+        bottom: 0; 
+        width: 100%; 
+    
+}
+
+footer h4{
+    color : navy;
+}
+
+footer p {
+    color : navy;
+}
+
+
+
+/*login*/
+
+.login-container {
+    margin: 20px;
+}
+
+.login-container h1 {
+    font-size: 2rem;
+    padding: 1rem 2rem;
+    margin-top: 7rem;
+    text-align: center;
+}
+
+.login-container form {
+    background-color: transparent;
+    padding :1rem 2rem;
+    margin-top: 3rem;
+    border : 1px solid black;
+    font-weight: bold;
+    align-items: center;
+    text-align: center;
+}
+
+.loginForm .input-group label{
+    display: block;
+    margin-bottom : 5px;
+    color: #555;
+}
+
+.loginForm .input-group input{
+    width: 25%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.loginForm button {
+    width: 25%;
+    margin-top: 10px;
+    padding : 10px;
+    background-color: gray;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top : 5px;
+}
+
+.login-container button:hover {
+    background-color: gray;
+}
+
+.loginForm [type = "submit"]{
+    color: #ffffff;
+    background-color: #373f3c;
+    font-weight : normal;
+}
+
+
+/*search*/
+
+.search-container {
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 5px;   
+}
+
+.search-container input{
+    width: 100%;
+    height: 50px;
+    box-sizing: border-box;
+    border: 0;
+    background: transparent;
+    font-size: 16px;
+    letter-spacing: -.25pt;
+    padding-block-start: 3px;
+    color: #000;
+}
+
+.search-container input[type = "text"]{
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 200px;
+    font-size: 14px;
+}
+
+.search-container input[type="text"]:focus {
+    border-color: #007bff;
+    outline : none;
+}
+
+.search-container button{
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-left: 5px;
+}
+
+.search-container button:hover {
+    background-color: #0056b3;
+}
+
+
+/*weather*/
+
+.weather-container {
+    text-align: center;
+    width : 100%;
+}
+
+.weather-container h1 {
+    font-size: 2rem;
+    padding: 1rem 2rem;
+    margin-top: 7rem;
+    text-align: center;
+}
+
+.weather-container input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 200px;
+    margin-right: 10px;
+    font-size: 14px;
+    justify-content: center;
+}
+
+.weather-container button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    justify-content: center;
+}
+
+.weather-container button:hover {
+    background-color: #0056b3;
+}
+
+#weather-result {
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+
+/*exchange*/
+
+.exchange-container {
+    margin: 20px;
+    text-align: center;
+    width : 100%;
+}
+
+.exchange-container h1 {
+    font-size: 2rem;
+    padding: 1rem 2rem;
+    margin-top: 7rem;
+    text-align: center;
+}
+
+.exchange-container input[type="text"] {
+    padding: 1rem 2rem;
+    border: 1px solid black;
+    border-radius: 4px;
+    width: 200px;
+    font-size: 14px;
+    background-color: transparent;
+    margin-top: 2rem;
+    color : black;
+    font-weight: bold;
+    text-align: center;
+
+}
+
+.exchange-container button {
+    padding: 10px 15px;
+    background-color: whitesmoke;
+    color: black;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    justify-content: center;
+}
+
+.exchange-container button:hover {
+    background-color: gray;
+}
+
+#exchange-result {
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+
+
+/*calendar*/
+
+.calendar-container body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.calendar-container {
+    background-color: transparent;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    margin-top: 7rem;
+}
+
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.day {
+    border: 1px solid #ccc;
+    padding: 10px;
+    min-height: 100px;
+    position: relative;
+}
+
+.event-form {
+    margin-bottom: 20px;
+}
+
+.calendar-container input[type="date"],
+input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+.calendar-container button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.calendar-container button:hover {
+    background-color: #0056b3;
+}
+
+#events-list {
+    margin-top: 20px;
+    text-align: left;
+}
+
+
+/*review*/
+
+.review-container {
+    margin: 20px;
+}
+
+.review-container h2 {
+    font-size: 2rem;
+    padding: 1rem 2rem;
+    margin-top: 7rem;
+    text-align: center;
+}
+
+.review-container form {
+    background-color: transparent;
+    border: 3px solid navy;
+    padding :1rem 2rem;
+    margin-top: 2rem;
+    color : gray;
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+}
