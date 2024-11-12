@@ -1,20 +1,32 @@
 <header>
     <div class = "container">
-        <h1><button type="button"><a href = "indexpro.html">Planvel</a></button></h1>
+        <h1><a href = "indexpro.html" role="button">Planvel</a></h1>
         <nav>
-        <ul>
-            <li>
-                <button><a href = "calendar.html">캘린더</a></button>
+        <ul class="menu">
+            <li class="menu-item">
+                <a href = "calendar.html" role = "button">계획</a>
             </li>
-            <li>
-                <button><a href = "weather.html">날씨</a></button>
+            <li class="menu-item">
+                <a href = "search.html" role="button">여행지 검색</a>
             </li>
-            <li>
-                <button><a href = "exchange.html">환율</a></button>
-            </li>
-            <li>
-                <button><a href = "review.html">후기</a></button>
-            </li>
+            <li class="menu-item">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    MY
+                  </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a href ="review.html" role="button">후기 관리</a></li>
+                    <li><a href="map.html" role="button">다녀온 곳</a></li>
+                </ul>
+              </li>
+            <li class="menu-item">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    ETC
+                  </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a href="weather.html" role="button">날씨 확인</a></li>
+                  <li><a href="exchange.html" role="button">환율 확인</a></li>
+                </ul>
+              </li>
             <li>
                 <button type="button" class="btn btn-secondary"><a href = "login.html">Login</a></button>
             </li>

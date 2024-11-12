@@ -12,17 +12,32 @@
 
     <div class="exchange-container">
         <h1>환율 정보</h1>
-        <input type="text" id="currency" placeholder="통화 코드 (예: USD)" required>
+
+        <h3>금액 입력과 해당 통화 선택</h3>
+        <input type="number" id="amount" placeholder="금액 입력" required>
+        <select id="currency">
+            <option value="USD">미국 달러 (USD)</option>
+            <option value="EUR">유로 (EUR)</option>
+            <option value="JPY">일본 엔 (JPY)</option>
+            <option value="GBP">영국 파운드 (GBP)</option>
+        </select>
+        <h3>변환할 통화 선택</h3>
+        <select id="target-currency">
+            <option value="KRW">원 (KRW)</option>
+            <option value="USD">미국 달러 (USD)</option>
+            <option value="EUR">유로 (EUR)</option>
+            <option value="JPY">일본 엔 (JPY)</option>
+        </select>
         <button id="get-rate-btn">환율 가져오기</button>
         <div id="exchange-result"></div>
     </div>
 
-    <script src="project_exchange.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-
-    <div id="footer-container"></div>
-
+   
 </body>
+
+<script src="project_exchange.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
 
 <script>
     fetch('header.html')

@@ -14,10 +14,9 @@ li{
 }
 
 
-
 /*header*/
 header {
-    position : fixed;
+    position:relative;
     color: white;
     top : 0;
     z-index : 1;
@@ -42,40 +41,34 @@ header nav ul li{
     margin-left: 10px;
 }
 
-header button{
+header .container h1{
     background:transparent;
+    color: black;
     border:0;
     cursor: pointer;
 }
 
-header h1 button{
+header .container h1 a{
     font-size: 2rem;
     font-weight: bold;
 }
 
-header nav ul li button{
+header .container nav .menu .menu-item a{
     font-size:1.2rem;
     color: black;
 }
 
+header nav .menu .menu-item{
+    position: relative;
+}
 
 
 /*main*/
 
+
 main h4 {
     font-size: 2rem;
     padding: 1rem 2rem;
-    margin-top: 7rem;
-    text-align: center;
-}
-
-main .search-container form{
-    background-color: transparent;
-    border: 2px solid gray;
-    padding :1rem 2rem;
-    margin-top: 2rem;
-    color : gray;
-    font-weight: bold;
     text-align: center;
 }
 
@@ -92,18 +85,31 @@ main .hot-review::after{
     clear: both;
 }
 
-main .hot-review #review-card .card {
-    width : 20%;
-    height : 300px;
-    float : left;
-    margin: 100px 10px; 
+.recommend {
+    display : flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
 }
 
-main .hot-review .card img{
+main .recommend .card {
+    width : 22%;
+    overflow: hidden;
+    height : 300px;
+    min-width: 250px;
+    margin: 10px; 
+}
+
+main .recommend .card img{
     width : 100%;
     height : 50%;
     display : block;
 }
+
+main .recommend .card .card-body .card-text{
+    text-align: center;
+}
+
 
 
 /*footer*/
@@ -111,8 +117,7 @@ main .hot-review .card img{
 footer {
     text-align: center;
     background-color: aquamarine;
-        position: relative; 
-        bottom: 0; 
+        position: absolute; 
         width: 100%; 
     
 }
@@ -126,37 +131,31 @@ footer p {
 }
 
 
-
 /*login*/
-
-.login-container {
-    margin: 20px;
-}
 
 .login-container h1 {
     font-size: 2rem;
     padding: 1rem 2rem;
-    margin-top: 7rem;
     text-align: center;
 }
 
-.login-container form {
+.login-container .loginForm .input-group {
     background-color: transparent;
     padding :1rem 2rem;
     margin-top: 3rem;
-    border : 1px solid black;
     font-weight: bold;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    text-align: center;
+    justify-content: center;
 }
 
 .loginForm .input-group label{
-    display: block;
     margin-bottom : 5px;
     color: #555;
 }
 
-.loginForm .input-group input{
+.loginForm .input-group input, .loginForm button{
     width: 25%;
     padding: 10px;
     margin-top: 5px;
@@ -167,16 +166,11 @@ footer p {
 }
 
 .loginForm button {
-    width: 25%;
-    margin-top: 10px;
-    padding : 10px;
     background-color: gray;
     color: white;
     border: none;
-    border-radius: 4px;
     cursor: pointer;
     font-size: 16px;
-    margin-top : 5px;
 }
 
 .login-container button:hover {
@@ -193,6 +187,9 @@ footer p {
 /*search*/
 
 .search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #ffffff;
     padding: 10px;
     border-radius: 5px;   
@@ -249,7 +246,6 @@ footer p {
 .weather-container h1 {
     font-size: 2rem;
     padding: 1rem 2rem;
-    margin-top: 7rem;
     text-align: center;
 }
 
@@ -295,7 +291,6 @@ footer p {
 .exchange-container h1 {
     font-size: 2rem;
     padding: 1rem 2rem;
-    margin-top: 7rem;
     text-align: center;
 }
 
@@ -333,6 +328,9 @@ footer p {
     font-size: 18px;
 }
 
+.exchange-container h3 {
+    margin-top: 20px;
+}
 
 
 /*calendar*/
@@ -341,7 +339,7 @@ footer p {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 100%;
     margin: 0;
 }
 
@@ -350,7 +348,7 @@ footer p {
     padding: 20px;
     border-radius: 8px;
     text-align: center;
-    margin-top: 7rem;
+    flex-grow: 1;
 }
 
 .calendar {
@@ -419,5 +417,37 @@ input[type="text"] {
     color : gray;
     font-weight: bold;
     text-align: center;
-    display: flex;
 }
+
+.review-container form div #content {
+    height: 300px;
+}
+
+.review-container form div {
+    margin-top: 15px;
+}
+
+.review-container form button{
+    margin-top: 20px;
+}
+
+/* map */
+body main .map-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin: 0;
+    flex-direction: column;
+}
+
+body main .map-page label {
+    margin-top: 20px;
+}
+
+body main .map-page #tripType {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
