@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>여행 웹사이트</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+    <div id = "header"></div>
+
+    <main>
+        <h4>원하는 여행지는?</h4>
+    <div class = "search-container">
+        <form action = "/search" method = "GET">
+        <input type = "text" placeholder="여행지 입력" name = "query" required>
+        <button type = "submit">검색</button>
+        </form>
+    </div>
+
+    <h4>추천 여행지</h4>
+        <div class = "recommend">
+            <section id="recommend-card">
+                <div class="card">
+                    <img src="강원도.jpeg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text">강원도</p>
+                    </div>
+                </div>      
+            </section>
+    
+            <section id="recommend-card">
+                <div class="card">
+                    <img src="도쿄.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text">도쿄</p>
+                    </div>
+                </div>      
+            </section>
+    
+            <section id="recommend-card">
+                <div class="card">
+                    <img src="하노이.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text">하노이</p>
+                    </div>
+                </div>      
+            </section>
+    
+            <section id="recommend-card">
+                <div class="card">
+                    <img src="파리.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text">파리</p>
+                    </div>
+                </div>      
+            </section>
+
+        </div> 
+    </main>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+</body>
+
+<script>
+    fetch('header.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header').innerHTML = data;
+        });
+</script>
+
+</html>
