@@ -93,7 +93,7 @@ main .hot-review::after{
     justify-content: space-between;
     flex-wrap: wrap;
     margin-bottom: 40px;
-    padding: 40px;
+    padding: 30px;
 }
 
 main .recommend .card {
