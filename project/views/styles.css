@@ -431,6 +431,12 @@ input[type="text"] {
     margin-top: 20px;
 }
 
+.card-img-top {
+    width: 100%;  
+    height: 250px; 
+    object-fit: cover; 
+}
+
 /* map */
 body main .map-page {
     display: flex;

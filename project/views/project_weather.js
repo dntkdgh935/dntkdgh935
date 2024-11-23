@@ -1,6 +1,6 @@
 document.getElementById('search-btn').addEventListener('click', function() {
-    const city = document.getElementById('city').value.trim();  // 도시 입력 값
-    const date = document.getElementById('date').value;  // 날짜 입력 값
+    const city = document.getElementById('city').value.trim();  
+    const date = document.getElementById('date').value;  
 
     if (!city) {
         document.getElementById('weather-result').innerHTML = "도시를 입력해주세요.";
@@ -13,9 +13,8 @@ document.getElementById('search-btn').addEventListener('click', function() {
     fetch(url)
         .then(response => response.json())
         .then(data => {
-            console.log(data);  // 응답 데이터 확인
+            console.log(data);  
             if (data.cod === 200) {
-                // 날씨 결과 표시
                 document.getElementById('weather-result').innerHTML = `
                     기온: ${data.main.temp}°C<br>
                     날씨: ${data.weather[0].description}<br>
