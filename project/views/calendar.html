@@ -14,18 +14,30 @@
         <div class="calendar" id="calendar"></div>
         <div class="event-form">
             <h2>여행 계획 추가</h2>
-            <input type="date" id="date" required>
+            
+            <input type="date" id="start-date" required>
+            <input type="date" id="end-date" required>
+
             <input type="text" id="event" placeholder="여행 계획을 입력하세요..." required>
             <button id="add-event-btn">추가</button>
+
+            <div id="events-list"></div>
         </div>
-        <div id="events-list"></div>
+        
+
+
+        <div id="map"></div>
     </div>
 
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD636QSIHQ5FpUNOHCCGbGG-932nlF9S7s&callback=initMap" async defer></script>
+    <script src="chMap.js"></script>
+
     <script src="project_calendar.js"></script>
+    <script src="date.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
 </body>
-
 
 <script>
     fetch('header.html')
@@ -35,11 +47,4 @@
         });
 </script>
 
-<script>
-    fetch('footer.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('footer-container').innerHTML = data;
-        });
-</script>
 </html>

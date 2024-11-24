@@ -17,12 +17,11 @@ li{
 /*header*/
 header {
     position:relative;
-    color: white;
     top : 0;
     z-index : 1;
     width : 100%;
     padding : 1rem;
-    background-color: aquamarine;
+    background-color:aquamarine;
 }
 
 header .container {
@@ -62,14 +61,18 @@ header nav .menu .menu-item{
     position: relative;
 }
 
+header .container nav li button.btn-secondary {
+    background-color: #ffffff;
+    color: black;
+}
+
 
 /*main*/
-
-
 main h4 {
     font-size: 2rem;
     padding: 1rem 2rem;
     text-align: center;
+    margin-top: 30px;
 }
 
 main .hot-review h2{
@@ -90,6 +93,7 @@ main .hot-review::after{
     justify-content: space-between;
     flex-wrap: wrap;
     margin-bottom: 40px;
+    padding: 30px;
 }
 
 main .recommend .card {
@@ -97,19 +101,19 @@ main .recommend .card {
     overflow: hidden;
     height : 300px;
     min-width: 250px;
-    margin: 10px; 
+    
 }
 
 main .recommend .card img{
     width : 100%;
-    height : 50%;
+    height : 60%;
     display : block;
+    object-fit: cover;
 }
 
 main .recommend .card .card-body .card-text{
     text-align: center;
 }
-
 
 
 /*footer*/
@@ -334,26 +338,30 @@ footer p {
 
 
 /*calendar*/
+.calendar-container {
+    display: flex; 
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 10px;
+}
 
 .calendar-container body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
-    margin: 0;
+    height: 50%;
 }
 
-.calendar-container {
-    background-color: transparent;
-    padding: 20px;
-    border-radius: 8px;
-    text-align: center;
-    flex-grow: 1;
+.calendar-container h2 {
+    font-size: 2rem;
+    padding: 1rem 2rem;
+    text-align: left;
 }
+
 
 .calendar {
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     gap: 10px;
     margin-bottom: 20px;
 }
@@ -361,24 +369,27 @@ footer p {
 .day {
     border: 1px solid #ccc;
     padding: 10px;
-    min-height: 100px;
+    min-height: 10px;
     position: relative;
 }
 
 .event-form {
-    margin-bottom: 20px;
+    flex: 1;
+    margin-bottom: 10px;
+    text-align: center;
 }
 
+
 .calendar-container input[type="date"],
-input[type="text"] {
+                    input[type="text"] {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    margin-right: 10px;
+    margin-right: 5px;
 }
 
 .calendar-container button {
-    padding: 10px 15px;
+    padding: 10px;
     background-color: #007bff;
     color: white;
     border: none;
@@ -391,8 +402,15 @@ input[type="text"] {
 }
 
 #events-list {
-    margin-top: 20px;
+    margin-left: 30px;
     text-align: left;
+}
+
+#map {
+    margin-top: 30px;
+    margin-right: 10px;
+    height: 500px; 
+    width: 700px;
 }
 
 

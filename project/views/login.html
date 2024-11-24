@@ -19,10 +19,25 @@
             <input type="text" id="username" name="username" placeholder="Username">
             <label for="password">PASSWORD</label>
             <input type="password" id="password" name="password" placeholder="Password">
-            <button type="submit">Login</button>
+            <button type="submit">로그인</button>
+            <button type="button" onclick="openSignup()">회원가입</button>
         </div>
         </form>
     </div>
+    <script>
+        function openSignup() {
+            var screenWidth = window.innerWidth;
+            var screenHeight = window.innerHeight;
+        
+            var width = 600;
+            var height = 400;
+        
+            var left = (screenWidth - width) / 2;
+            var top = (screenHeight - height) / 2;
+
+            window.open("signup.html", "_blank", "width=600, height=700 "+ ", left=" + left + ", top=" + top);
+        }
+    </script>
 
     <script>
         document.getElementById('loginForm').addEventListener('submit', function(e) {
