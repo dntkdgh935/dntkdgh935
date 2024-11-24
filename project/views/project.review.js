@@ -1,7 +1,6 @@
 let reviews = [];
 let myReviews = [];
 
-// 리뷰 폼 제출 이벤트
 document.addEventListener('DOMContentLoaded', function () {
     const reviewForm = document.getElementById('reviewForm');
     if (reviewForm) {
@@ -22,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const reader = new FileReader();
             reader.onload = function (event) {
                 const newReview = {
-                    id: crypto.randomUUID(), // 고유 ID 추가
+                    id: crypto.randomUUID(), 
                     title,
                     content,
                     hashtags,
@@ -44,13 +43,11 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // 데이터 불러오기 및 초기 렌더링
     loadReviews();
     displayReviews();
     displayMyReviews();
 });
 
-// 리뷰를 화면에 표시
 function displayReviews() {
     const hotReviewContainer = document.getElementById('hot-reviews-container');
     if (!hotReviewContainer) {
@@ -58,13 +55,11 @@ function displayReviews() {
         return;
     }
 
-    hotReviewContainer.innerHTML = ''; // 기존 내용을 초기화
+    hotReviewContainer.innerHTML = ''; 
 
-    // 좋아요 순으로 정렬
     const sortedReviews = [...reviews].sort((a, b) => b.likes - a.likes);
 
-    // 좋아요가 많은 9개 리뷰만 표시
-    sortedReviews.slice(0, 9).forEach((review) => {
+    sortedReviews.slice(0, 30).forEach((review) => {
         const reviewCard = document.createElement('div');
         reviewCard.className = 'col-md-4 mb-4';
         reviewCard.innerHTML = `
@@ -83,12 +78,11 @@ function displayReviews() {
     });
 }
 
-// 내가 작성한 리뷰를 화면에 표시
 function displayMyReviews() {
     const myReviewsContainer = document.getElementById('my-reviews-container');
     if (!myReviewsContainer) return;
 
-    myReviewsContainer.innerHTML = ''; // 기존 내용을 초기화
+    myReviewsContainer.innerHTML = '';
 
     myReviews.forEach((review) => {
         const reviewCard = document.createElement('div');
@@ -109,13 +103,12 @@ function displayMyReviews() {
     });
 }
 
-// 좋아요 추가
 function likeReview(id) {
     const review = reviews.find(r => r.id === id);
     if (review) {
-        review.likes++; // 좋아요 수 증가
-        saveReviews(); // 데이터 저장
-        displayReviews(); // 화면 업데이트
+        review.likes++;
+        saveReviews(); 
+        displayReviews(); 
     } else {
         console.error(`ID가 ${id}인 리뷰를 찾을 수 없습니다.`);
     }
@@ -124,15 +117,14 @@ function likeReview(id) {
 function likeMyReview(id) {
     const review = myReviews.find(r => r.id === id);
     if (review) {
-        review.likes++; // 좋아요 수 증가
-        saveReviews(); // 데이터 저장
-        displayMyReviews(); // 화면 업데이트
+        review.likes++; 
+        saveReviews(); 
+        displayMyReviews(); 
     } else {
         console.error(`ID가 ${id}인 내 리뷰를 찾을 수 없습니다.`);
     }
 }
 
-// 내가 작성한 리뷰 삭제
 function removeMyReview(id) {
     myReviews = myReviews.filter(review => review.id !== id);
     reviews = reviews.filter(review => review.id !== id);
@@ -142,13 +134,11 @@ function removeMyReview(id) {
     displayReviews();
 }
 
-// 로컬 스토리지에 데이터 저장
 function saveReviews() {
     localStorage.setItem('reviews', JSON.stringify(reviews));
     localStorage.setItem('myReviews', JSON.stringify(myReviews));
 }
 
-// 로컬 스토리지에서 데이터 불러오기
 function loadReviews() {
     const storedReviews = localStorage.getItem('reviews');
     const storedMyReviews = localStorage.getItem('myReviews');
