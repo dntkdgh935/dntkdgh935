@@ -55,7 +55,7 @@ function displayReviews() {
         return;
     }
 
-    hotReviewContainer.innerHTML = ''; 
+    hotReviewContainer.innerHTML = '';  // 리뷰를 다시 그리기 전 기존 내용을 지우기
 
     const sortedReviews = [...reviews].sort((a, b) => b.likes - a.likes);
 
@@ -70,7 +70,7 @@ function displayReviews() {
                     <p class="card-text">${review.content.substring(0, 100)}...</p>
                     <p><strong>${review.hashtags}</strong></p>
                     <p>좋아요: <span id="like-count-${review.id}">${review.likes}</span></p>
-                    <button class="btn btn-success" data-id="${review.id}" onclick="likeReview(${review.id})">👍 좋아요</button>
+                    <button class="btn btn-success" data-id="${review.id}" onclick="likeReview('${review.id}')">👍 좋아요</button>
                 </div>
             </div>
         `;
@@ -95,7 +95,7 @@ function displayMyReviews() {
                     <p class="card-text">${review.content.substring(0, 100)}...</p>
                     <p><strong>${review.hashtags}</strong></p>
                     <p>좋아요: <span id="my-like-count-${review.id}">${review.likes}</span></p>
-                    <button class="btn btn-danger" onclick="removeMyReview(${review.id})">❌ 제거</button>
+                    <button class="btn btn-danger" onclick="removeMyReview('${review.id}')">❌ 제거</button>
                 </div>
             </div>
         `;
@@ -106,9 +106,20 @@ function displayMyReviews() {
 function likeReview(id) {
     const review = reviews.find(r => r.id === id);
     if (review) {
-        review.likes++;
-        saveReviews(); 
-        displayReviews(); 
+        review.likes++;  // 좋아요 수 증가
+        saveReviews();   // 로컬 스토리지에 저장
+
+        // 좋아요 수를 즉시 업데이트
+        const likeCountElement = document.getElementById(`like-count-${id}`);
+        if (likeCountElement) {
+            likeCountElement.textContent = review.likes;  // 좋아요 수를 직접 업데이트
+        }
+
+        // 리뷰가 들어있는 컨테이너만 다시 렌더링 (전체 리렌더링을 피함)
+        const reviewCard = document.querySelector(`#like-count-${id}`).closest('.card');
+        if (reviewCard) {
+            reviewCard.querySelector('.card-body p span').textContent = review.likes;
+        }
     } else {
         console.error(`ID가 ${id}인 리뷰를 찾을 수 없습니다.`);
     }
@@ -117,9 +128,9 @@ function likeReview(id) {
 function likeMyReview(id) {
     const review = myReviews.find(r => r.id === id);
     if (review) {
-        review.likes++; 
-        saveReviews(); 
-        displayMyReviews(); 
+        review.likes++;  // 좋아요 수 증가
+        saveReviews();   // 로컬 스토리지에 저장
+        displayMyReviews();  // 내 리뷰 화면 갱신
     } else {
         console.error(`ID가 ${id}인 내 리뷰를 찾을 수 없습니다.`);
     }
