@@ -94,8 +94,8 @@ main .hot-review::after{
     flex-wrap: wrap;
     margin-bottom: 40px;
     padding: 30px;
+    
 }
-
 main .recommend .card {
     width : 22%;
     overflow: hidden;
@@ -103,14 +103,12 @@ main .recommend .card {
     min-width: 250px;
     
 }
-
 main .recommend .card img{
     width : 100%;
     height : 60%;
     display : block;
     object-fit: cover;
 }
-
 main .recommend .card .card-body .card-text{
     text-align: center;
 }
@@ -237,6 +235,35 @@ footer p {
 
 .search-container button:hover {
     background-color: #0056b3;
+}
+
+.hotCity {
+    display : flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+    padding: 30px;
+    
+}
+.hotCity .card {
+    width : 22%;
+    overflow: hidden;
+    height : 300px;
+    min-width: 250px;
+    
+}
+.hotCity .card img{
+    width : 100%;
+    height : 60%;
+    display : block;
+    object-fit: cover;
+}
+.hotCity .card .card-body .card-text{
+    text-align: center;
+}
+
+.modal-dialog{
+    top: 10%;
 }
 
 
